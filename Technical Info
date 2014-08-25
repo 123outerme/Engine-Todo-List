@@ -1,2 +1,3 @@
-The lists used to store items are the built in lists L1-L6.
+The lists used to store items are the built in lists LA, LB, LC, LD, LE, and LF.
 The custom list used to store Sparks, arrow design unlocked, and how many minigames are unlocked is LENSAV.
+Don't create any list defined above, the program will do it for you, if you don't have it.

@@ -1,5 +1,9 @@
 Changelog 0.5:
 *Fixed Engine
 
-Changelog _._:
-*
+Changelog 0.6:
+*Added "Options Menu", moved Help there, added ability to switch cursors
+*Changed program so that list items now use custom lists instead of L1-L6
+*Added a text overflow block
+*Fixed visual bug with exiting out of Help screen
+*Fixed bugs related to empty lists and ERR: DIM

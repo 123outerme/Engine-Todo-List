@@ -89,7 +89,7 @@ Lbl C:ʟD→ʟC:Str6→Str5
 Lbl D:ʟE→ʟD:Str7→Str6
 Lbl E:ʟF→ʟE:Str8→Str7
 Lbl F:{27,27→ʟF:"  →Str8
-ʟENSAV(1)+1→ʟENSAV(1)
+ʟENSAV(1)+2→ʟENSAV(1)
 1→L:Goto 7
 End
 If B=22:Then:Goto 5:End
@@ -158,13 +158,14 @@ If Ans=82:Then:Goto 8:End
 If B=94:Then:Goto H:End
 If B=92:Then:DelVar CDelVar BʟENSAV(1)→S
 ClrDraw
-Text(0,1,"*MOTOR SHOP* DEL=BACK
-Text(12,1,"SPARKS:
-Text(12,66,S
-Text(24,1,"1. > CURSOR (20)
-Text(36,1,"2. π CURSOR (60)
-Text(48,1,"3. MINIGAME 1 (150)
-Text(60,1,"4. MINIGAME 2 (400)
+Text(0,1,"SPARKS:
+Text(0,66,S
+Pause :ClrDraw
+Text(0,1,"*MOTOR SHOP*/DEL=BACK
+Text(12,1,"1. > CURSOR (20)
+Text(24,1,"2. π CURSOR (60)
+Text(36,1,"3. MINIGAME 1 (80)
+Text(48,1,"4. MINIGAME 2 (100)
 Repeat B
 getKey→B
 If Ans=92:Then:4→C:End
@@ -189,11 +190,11 @@ If C=5 and S≥60:Then
 ClrDraw
 Text(0,1,"PURCHASED!
 End
-If C=6 and S≥150:Then
+If C=6 and S≥80:Then
 150-S→ʟENSAV(1)
 1+ʟENSAV(3)→ʟENSAV(3)
 End
-If C=7 and S≥400:Then
+If C=7 and S≥100:Then
 400-S→ʟENSAV(1)
 2+ʟENSAV(3)→ʟENSAV(3)
 ClrDraw
@@ -207,10 +208,10 @@ Text(0,1,"+MINGAMES+
 Text(12,1,"1. MINIGAME 1
 Text(24,1,"2. MINIGAME 2
 Text(36,1,"3. BACK
-DelVar B
 Repeat B
 getKey→B
 If Ans=94:Then:Goto 5:End
+If B=93 and ʟENSAV(3)≥2:Then:Goto M:End
 If B=92 and (ʟENSAV(3)=1 or ʟENSAV(3)=3):Then:DelVar KClrHome
 DelVar TOutput(1,1,"<+> TO MOVE.
 Output(2,1,"2ND TO QUIT.
@@ -228,13 +229,13 @@ If U=8 and V=W:Then:Output(1,1,"GAME OVER!
 Output(2,1,"SCORE:
 Output(2,7,T
 Pause :ClrHome:21→K:Goto J:End
-If T/50≥1:10+ʟENSAV(1)→ʟENSAV(1)
+If int(T/50≥1:10+ʟENSAV(1)→ʟENSAV(1)
 If U=8:Then:Output(8,V," 
 1→U:W→V:1+T→T:End
 End
 ClrHome:DelVar BDelVar UDelVar VDelVar WDelVar T
 End
-If Ans=93 and ʟENSAV(3)=2:Then
+Lbl M:End
 ClrHome
 DelVar TDelVar QOutput(1,1,"<+> TO MOVE.
 Output(2,1,"2ND TO QUIT. 
@@ -260,8 +261,13 @@ Output(Ans+1,W,"
 End:1→Q:Output(1,W," 
 If W=V and Q:Then:Output(U,V," 
 1→U:randInt(1,8)→V:DelVar Q:1+T→T:If S≥2:S-1→S:End
-End:End:End
 End
+If int(T/10≥1:Then:20+ʟENSAV(1)→ʟENSAV(1)
+End:End
+DelVar TDelVar UDelVar VDelVar WDelVar S:If 1:Then
+End
+End
+Goto I
 Lbl H:End:DelVar BClrDraw
 Text(0,1,"OPTIONS:
 Text(12,1,"1. SETTINGS
@@ -296,5 +302,6 @@ Text(48,1,"TILDA^3 PROD.
 Pause :ClrDraw
 Text(0,1,"CODED BY:
 Text(12,1,"123OUTERME
+Text(24,1,"V0.8
 Pause :ClrDraw
 If B=93:Then:DelVar B:Goto H:End

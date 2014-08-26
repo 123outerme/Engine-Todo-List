@@ -27,3 +27,7 @@ Changelog 0.9:
 *Added how to quit (ENTER) in the Help screen
 *Hopefully fixed bug where Engine added a space to the beginning of an entry
 Other tweaks and optimizations
+
+Changelog 1.0:
+*Tons of Optimizations (~4100 - 3941 bytes!)
+*Fixed issue with trying to check off a list item and cursor going into the divider line

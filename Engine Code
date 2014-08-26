@@ -3,14 +3,14 @@ DelVar CDelVar B
 SetUpEditor ʟENSAV
 FnOff :GridOff
 AxesOff:PlotsOff 
-If ʟENSAV(1)=0:{10,1,0→ʟENSAV
-SetUpEditor 
-If dim(L₁<2:{27,27→L₁
-If dim(L₂<2:{27,27→L₂
-If dim(L₃<2:{27,27→L₃
-If dim(L₄<2:{27,27→L₄
-If dim(L₅<2:{27,27→L₅
-If dim(L₆<2:{27,27→L₆
+If not(dim(ʟENSAV:{10,1,0→ʟENSAV
+SetUpEditor ʟA,ʟB,ʟC,ʟD,ʟE,ʟF
+If not(dim(ʟA:{27,27→ʟA
+If not(dim(ʟB:{27,27→ʟB
+If not(dim(ʟC:{27,27→ʟC
+If not(dim(ʟD:{27,27→ʟD
+If not(dim(ʟE:{27,27→ʟE
+If not(dim(ʟF:{27,27→ʟF
 0→Xmin:Ans→Ymin
 94→Xmax:62→Ymax
 " →Str2
@@ -27,33 +27,33 @@ Lbl 2
 DelVar LClrHome
 Output(1,1,"MODE=MENU
 Output(2,1,"----------------
-For(X,1,dim(L₁
-L₁(X)→B
+For(X,1,dim(ʟA
+ʟA(X)→B
 sub(Str1,B,1
 Str2+Ans→Str2
 Output(3,1,Str2:End
-For(X,1,dim(L₂
-L₂(X)→B
+For(X,1,dim(ʟB
+ʟB(X)→B
 sub(Str1,B,1
 Str3+Ans→Str3
 Output(4,1,Str3:End
-For(X,1,dim(L₃
-L₃(X)→B
+For(X,1,dim(ʟC
+ʟC(X)→B
 sub(Str1,B,1
 Str5+Ans→Str5
 Output(5,1,Str5:End
-For(X,1,dim(L₄
-L₄(X)→B
+For(X,1,dim(ʟD
+ʟD(X)→B
 sub(Str1,B,1
 Str6+Ans→Str6
 Output(6,1,Str6:End
-For(X,1,dim(L₅
-L₅(X)→B
+For(X,1,dim(ʟE
+ʟE(X)→B
 sub(Str1,B,1
 Str7+Ans→Str7
 Output(7,1,Str7:End
-For(X,1,dim(L₆
-L₆(X)→B
+For(X,1,dim(ʟF
+ʟF(X)→B
 sub(Str1,B,1
 Str8+Ans→Str8:End
 DelVar L
@@ -63,7 +63,11 @@ Repeat B:getKey→B
 If B=105:Then:DelVar L:Goto 3:End
 If B=25 and A≥4:2→C
 If B=34 and A<8:1→C
-If B=31:Then:ClrHome:Input Str0
+If B=31:Then:Lbl J
+:ClrHome:Input Str0
+If length(Str0>14:Then:Output(1,1,"ERR 1:
+Output(2,1,"TOO LONG
+Pause :ClrHome:Goto K:End
 "  "+Str0→Str0
 Str7→Str8
 Str6→Str7
@@ -73,20 +77,20 @@ Str2→Str3
 Str0→Str2
 DelVar Str0:1→L:Goto G:End
 If B=21:Then:Output(A,2,"                
-If A=3:ClrList L₁:Goto A
-If A=4 and dim(L₂>1:Goto B
-If A=5 and dim(L₃>1:Goto C
-If A=6 and dim(L₄>1:Goto D
-If A=7 and dim(L₅>1:Goto E
-If A=8 and dim(L₆>1:Goto F
-Lbl A:L₂→L₁:Str3→Str2
-Lbl B:L₃→L₂:Str5→Str3
-Lbl C:L₄→L₃:Str6→Str5
-Lbl D:L₅→L₄:Str7→Str6
-Lbl E:L₆→L₅:Str8→Str7
-Lbl F:{27,27→L₆:"  →Str8
+If A=3:Goto A
+If A=4 and dim(ʟB>1:Goto B
+If A=5 and dim(ʟC>1:Goto C
+If A=6 and dim(ʟD>1:Goto D
+If A=7 and dim(ʟE>1:Goto E
+If A=8 and dim(ʟF>1:Goto F
+Lbl A:ʟB→ʟA:Str3→Str2
+Lbl B:ʟC→ʟB:Str5→Str3
+Lbl C:ʟD→ʟC:Str6→Str5
+Lbl D:ʟE→ʟD:Str7→Str6
+Lbl E:ʟF→ʟE:Str8→Str7
+Lbl F:{27,27→ʟF:"  →Str8
 ʟENSAV(1)+1→ʟENSAV(1)
-1→L:Goto G
+1→L:Goto 7
 End
 If B=22:Then:Goto 5:End
 If B:Output(A,1," 
@@ -96,24 +100,24 @@ Output(A,1,Str4
 DelVar CDelVar BDelVar L:End
 Lbl 3:End
 Lbl 6
-If B:Then:DelVar L₁DelVar L₂DelVar L₃DelVar L₄DelVar L₅DelVar L₆:Else:Goto 8:End
+If B:Then:DelVar ʟADelVar ʟBDelVar ʟCDelVar ʟDDelVar ʟEDelVar ʟF:Else:Goto 8:End
 For(C,1,length(Str2
-inString(Str1,sub(Str2,C,1→L₁(C
+inString(Str1,sub(Str2,C,1→ʟA(C
 End
 For(C,1,length(Str3
-inString(Str1,sub(Str3,C,1→L₂(C
+inString(Str1,sub(Str3,C,1→ʟB(C
 End
 For(C,1,length(Str5
-inString(Str1,sub(Str5,C,1→L₃(C
+inString(Str1,sub(Str5,C,1→ʟC(C
 End
 For(C,1,length(Str6
-inString(Str1,sub(Str6,C,1→L₄(C
+inString(Str1,sub(Str6,C,1→ʟD(C
 End
 For(C,1,length(Str7
-inString(Str1,sub(Str7,C,1→L₅(C
+inString(Str1,sub(Str7,C,1→ʟE(C
 End
 For(C,1,length(Str8
-inString(Str1,sub(Str8,C,1→L₆(C
+inString(Str1,sub(Str8,C,1→ʟF(C
 End
 If L:Then
 " →Str2
@@ -123,28 +127,30 @@ Ans→Str6
 Ans→Str6
 Ans→Str7
 Ans→Str8:End
-If dim(L₁>2
-DeltaList(cumSum(L₁→L₁
-If dim(L₂>2
-DeltaList(cumSum(L₂→L₂
-If dim(L₃>2
-DeltaList(cumSum(L₃→L₃
-If dim(L₄>2
-DeltaList(cumSum(L₄→L₄
-If dim(L₅>2
-DeltaList(cumSum(L₅→L₅
-If dim(L₆>2
-DeltaList(cumSum(L₆→L₆
+If dim(ʟA>2
+DeltaList(cumSum(ʟA→ʟA
+If dim(ʟB>2
+DeltaList(cumSum(ʟB→ʟB
+If dim(ʟC>2
+DeltaList(cumSum(ʟC→ʟC
+If dim(ʟD>2
+DeltaList(cumSum(ʟD→ʟD
+If dim(ʟE>2
+DeltaList(cumSum(ʟE→ʟE
+If dim(ʟF>2
+DeltaList(cumSum(ʟF→ʟF
 If not(L:Then:DelVar Str1DelVar Str2DelVar Str3DelVar Str4DelVar Str5DelVar Str6DelVar Str7DelVar Str8DelVar ADelVar BDelVar CDelVar DDelVar EDelVar FDelVar GDelVar HDelVar IDelVar JDelVar KDelVar LDelVar MDelVar NDelVar ODelVar PDelVar QDelVar RDelVar SDelVar TDelVar UDelVar VDelVar WDelVar XDelVar YDelVar ZDelVar θClrHome
 Return:Else:Goto 8:End
 Lbl 8:End:Goto 2
 Lbl 9:End:Goto 1
-Lbl G:End:Goto 6
+Lbl K:End:Goto J
+Lbl 7:End:Goto 6
+Lbl J:End:Goto I
 Lbl 5:End:DelVar BClrDraw
 Text(0,1,"MENU
 Text(12,1,"1. MOTOR SHOP
 Text(24,1,"2. GAMES
-Text(36,1,"3. HELP
+Text(36,1,"3. OPTIONS
 Text(48,1,"4. EXIT
 Repeat B=92 or B=93 or B=94 or B=82
 getKey→B:End
@@ -172,12 +178,14 @@ Lbl 0
 If C=4 and S≥20:Then
 20-S→ʟENSAV(1)
 2→ʟENSAV(2)
+1→ʟENSAV(4)
 ClrDraw
 Text(0,1,"PURCHASED!
 End
 If C=5 and S≥60:Then
 60-S→ʟENSAV(1)
 3→ʟENSAV(2)
+1→ʟENSAV(5)
 ClrDraw
 Text(0,1,"PURCHASED!
 End
@@ -194,16 +202,17 @@ End
 ClrDraw:Output(1,16," 
 DelVar SDelVar C
 End
-If B=93:Then:DelVar BClrDraw
+If B=93:Then:DelVar BClrDraw:Lbl I
 Text(0,1,"+MINGAMES+
 Text(12,1,"1. MINIGAME 1
 Text(24,1,"2. MINIGAME 2
 Text(36,1,"3. BACK
+DelVar B
 Repeat B
 getKey→B
 If Ans=94:Then:Goto 5:End
 ʟENSAV(3)
-If B=92 and Ans=1 or Ans=3:Then:DelVar KClrHome
+If B=92 and (Ans=1 or Ans=3):Then:DelVar KClrHome
 DelVar TOutput(1,1,"<+> TO MOVE. 2ND TO QUIT.
 Pause :ClrHome
 4→W:Ans→V
@@ -218,7 +227,7 @@ Output(U,V,"I
 If U=8 and V=W:Then:Output(1,1,"GAME OVER!
 Output(2,1,"SCORE:
 Output(2,7,T
-Pause :ClrHome:21→K:End
+Pause :ClrHome:21→K:Goto J:End
 If U=8:Then:Output(8,V," 
 1→U:W→V:1+T→T:End
 End
@@ -226,12 +235,39 @@ ClrHome:DelVar BDelVar UDelVar VDelVar WDelVar T
 End
 If Ans=93 and ʟENSAV(3)=2:Then:End
 End
-Lbl H:End:ClrDraw
+Lbl H:End:DelVar BClrDraw
+Text(0,1,"OPTIONS:
+Text(12,1,"1. SETTINGS
+Text(24,1,"2. HELP
+Text(36,1,"3. BACK
+Repeat B:getKey→B:End
+If Ans=94:Then:Goto 5:End
+If B=93:Then:Goto G:End
+If B=92:Then:DelVar BClrDraw:Goto L:End
+End
+Lbl L:End
+Text(0,1,"SETTINGS:
+Text(12,1,"1. : CURSOR
+If ʟENSAV(4):Text(24,1,"2. > CURSOR
+If ʟENSAV(5):Text(36,1,"3. π CURSOR
+Text(48,1,"4. BACK
+Repeat B:getKey→B
+If Ans=82:Then:DelVar BClrDraw:Goto 5:End
+If B=92:Then:1→ʟENSAV(2):ClrDraw:Text(0,1,"SAVED!
+Pause :ClrDraw:Goto L:End
+If B=93 and ʟENSAV(4):Then:2→ʟENSAV(2):ClrDraw:Text(0,1,"SAVED!
+Pause ClrDraw:Goto L:End
+If B=94 and ʟENSAV(5):Then:3→ʟENSAV(2):ClrDraw:Text(0,1,"SAVED!
+Pause :ClrDraw:Goto L:End
+End
+Lbl G:End
 Text(0,1,"ENTER TO QUIT, 2ND TO
 Text(12,1,"CHECK OFF AN ENTRY,
 Text(24,1,"ALPHA TO ADD A NEW 
-Text(36,1,"ENTRY.
-Pause :ClrDraw:Output(1,16," 
-If 1:Then:Goto 5:End
-0→B:End
-Lbl 7:End:Goto 6
+Text(36,1,"ENTRY. A
+Text(48,1,"TILDA^3 PROD.
+Pause :ClrDraw
+Text(0,1,"CODED BY:
+Text(12,1,"123OUTERME
+Pause :ClrDraw
+If B=93:Then:DelVar B:Goto H:End

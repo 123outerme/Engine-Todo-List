@@ -23,5 +23,7 @@ Changelog 0.8.1:
 *Tweaked Minigame 1's Spark rewards (now it's 10 Sparks per 75 dodged "I"s)
 *Fixed issue with exiting out of minigames and going to the wrong place
 
-Changelog 0.8.2 (Not released yet):
+Changelog 0.9:
 *Added how to quit (ENTER) in the Help screen
+*Hopefully fixed bug where Engine added a space to the beginning of an entry
+Other tweaks and optimizations

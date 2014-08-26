@@ -63,8 +63,7 @@ Repeat B:getKey→B
 If B=105:Then:DelVar L:Goto 3:End
 If B=25 and A≥4:2→C
 If B=34 and A<8:1→C
-If B=31:Then:Lbl J
-:ClrHome:Input Str0
+If B=31:Then:Lbl J:ClrHome:Input Str0
 If length(Str0>14:Then:Output(1,1,"ERR 1:
 Output(2,1,"TOO LONG
 Pause :ClrHome:Goto K:End
@@ -145,7 +144,7 @@ Lbl 8:End:Goto 2
 Lbl 9:End:Goto 1
 Lbl K:End:Goto J
 Lbl 7:End:Goto 6
-Lbl J:End:Goto I
+Lbl N:End:Goto I
 Lbl 5:End:DelVar BClrDraw
 Text(0,1,"MENU
 Text(12,1,"1. MOTOR SHOP
@@ -228,12 +227,12 @@ Output(U,V,"I
 If U=8 and V=W:Then:Output(1,1,"GAME OVER!
 Output(2,1,"SCORE:
 Output(2,7,T
-Pause :ClrHome:21→K:Goto J:End
-If int(T/50≥1:10+ʟENSAV(1)→ʟENSAV(1)
+Pause :ClrHome:21→K:Goto N:End
+If int(T/75≥1:10+ʟENSAV(1)→ʟENSAV(1)
 If U=8:Then:Output(8,V," 
 1→U:W→V:1+T→T:End
 End
-ClrHome:DelVar BDelVar UDelVar VDelVar WDelVar T
+ClrHome:DelVar BDelVar UDelVar VDelVar WDelVar T:Goto I
 End
 Lbl M:End
 ClrHome
@@ -255,7 +254,7 @@ If U≠1:Output(U-1,V,"
 If U=8:Then:Output(1,1,"GAME OVER!
 Output(2,1,"SCORE:
 Output(2,7,T
-Pause :ClrHome:21→K:End
+Pause :ClrHome:21→K:Goto N:End
 If K=53:Then:For(Q,1,7:8-Q:Output(Ans,W,".
 Output(Ans+1,W," 
 End:1→Q:Output(1,W," 

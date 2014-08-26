@@ -19,9 +19,9 @@ Ans→Str5
 Ans→Str6
 Ans→Str7
 Ans→Str8
-If ʟENSAV(2)=1:":"→Str4
-If ʟENSAV(2)=2:">"→Str4
-If ʟENSAV(2)=3:"π"→Str4
+If ʟENSAV(2)=1:":→Str4
+If ʟENSAV(2)=2:">→Str4
+If ʟENSAV(2)=3:"π→Str4
 Lbl 2
 3→A
 DelVar LClrHome
@@ -64,17 +64,20 @@ If B=105:Then:DelVar L:Goto 3:End
 If B=25 and A≥4:2→C
 If B=34 and A<8:1→C
 If B=31:Then:Lbl J:ClrHome:Input Str0
-If length(Str0>14:Then:Output(1,1,"ERR 1:
+If length(Str0)>14
+Then
+Output(1,1,"ERR 1:
 Output(2,1,"TOO LONG
-Pause :ClrHome:Goto K:End
-"  "+Str0→Str0
+Pause :ClrHome
+Goto K:End
+" "+Str0→Str0
 Str7→Str8
 Str6→Str7
 Str5→Str6
 Str3→Str5
 Str2→Str3
 Str0→Str2
-DelVar Str0:1→L:Goto G:End
+DelVar Str0DelVar B:Goto 3:End
 If B=21:Then:Output(A,2,"                
 If A=3:Goto A
 If A=4 and dim(ʟB>1:Goto B
@@ -87,7 +90,7 @@ Lbl B:ʟC→ʟB:Str5→Str3
 Lbl C:ʟD→ʟC:Str6→Str5
 Lbl D:ʟE→ʟD:Str7→Str6
 Lbl E:ʟF→ʟE:Str8→Str7
-Lbl F:{27,27→ʟF:"  →Str8
+Lbl F:{27→ʟF:" →Str8
 ʟENSAV(1)+2→ʟENSAV(1)
 1→L:Goto 7
 End
@@ -125,19 +128,32 @@ Ans→Str5
 Ans→Str6
 Ans→Str6
 Ans→Str7
-Ans→Str8:End
-If dim(ʟA>2
+Ans→Str8
+End
+If dim(ʟA=1:{27,27→ʟA
+If dim(ʟB=1:{27,27→ʟB
+If dim(ʟC=1:{27,27→ʟC
+If dim(ʟD=1:{27,27→ʟD
+If dim(ʟE=1:{27,27→ʟE
+If dim(ʟF=1:{27,27→ʟF
+If dim(ʟA≥2:Then
 DeltaList(cumSum(ʟA→ʟA
-If dim(ʟB>2
+End
+If dim(ʟB≥2:Then
 DeltaList(cumSum(ʟB→ʟB
-If dim(ʟC>2
+End
+If dim(ʟC≥2:Then
 DeltaList(cumSum(ʟC→ʟC
-If dim(ʟD>2
+End
+If dim(ʟD≥2:Then
 DeltaList(cumSum(ʟD→ʟD
-If dim(ʟE>2
+End
+If dim(ʟE≥2:Then
 DeltaList(cumSum(ʟE→ʟE
-If dim(ʟF>2
+End
+If dim(ʟF≥2:Then
 DeltaList(cumSum(ʟF→ʟF
+End
 If not(L:Then:DelVar Str1DelVar Str2DelVar Str3DelVar Str4DelVar Str5DelVar Str6DelVar Str7DelVar Str8DelVar ADelVar BDelVar CDelVar DDelVar EDelVar FDelVar GDelVar HDelVar IDelVar JDelVar KDelVar LDelVar MDelVar NDelVar ODelVar PDelVar QDelVar RDelVar SDelVar TDelVar UDelVar VDelVar WDelVar XDelVar YDelVar ZDelVar θClrHome
 Return:Else:Goto 8:End
 Lbl 8:End:Goto 2
@@ -296,11 +312,12 @@ Lbl G:End
 Text(0,1,"ENTER TO QUIT, 2ND TO
 Text(12,1,"CHECK OFF AN ENTRY,
 Text(24,1,"ALPHA TO ADD A NEW 
-Text(36,1,"ENTRY. A
-Text(48,1,"TILDA^3 PROD.
+Text(36,1,"ENTRY. ENTER TO
+Text(48,1,"QUIT.
 Pause :ClrDraw
-Text(0,1,"CODED BY:
-Text(12,1,"123OUTERME
-Text(24,1,"V0.8
+Text(0,1,"A TILDA^3 PROD.
+Text(12,1,"CODED BY:
+Text(24,1,"123OUTERME
+Text(36,1,"V0.9
 Pause :ClrDraw
 If B=93:Then:DelVar B:Goto H:End

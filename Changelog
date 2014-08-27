@@ -31,3 +31,14 @@ Other tweaks and optimizations
 Changelog 1.0:
 *Tons of Optimizations (~4100 - 3941 bytes!)
 *Fixed issue with trying to check off a list item and cursor going into the divider line
+
+Changelog 1.1: 
+*Added "Again" option (you can repeat minigames) 
+*Added "Won Sparks" message wheb you win Sparks in minigames 
+*Fixed Options 
+*Optimizations
+
+Changelog 1.2:
+*Fixed most actions messing text up
+*Fixed a few minor bugs
+*Small optimizations

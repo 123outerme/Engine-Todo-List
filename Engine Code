@@ -59,7 +59,8 @@ Lbl 1
 DelVar C3→A
 Output(A,1,Str4
 Repeat B:getKey→B
-If B=105:Then:DelVar L:Goto 7:End
+If B=105:Then:DelVar LClrHome:Output(1,1,"SAVING...
+Goto 7:End
 If B=25 and A≥4:2→C
 If B=34 and A<8:1→C
 If B=31:Then:Lbl J:ClrHome:Input Str0
@@ -93,7 +94,7 @@ Lbl 6
 If Q:Then:Str7→Str8
 Str6→Str7:Str5→Str6
 Str3→Str5:Str2→Str3
-Str0→Str2:DelVar Str0:End
+Str0→Str2:DelVar Str0DelVar Q:End
 DelVar ʟADelVar ʟBDelVar ʟCDelVar ʟDDelVar ʟEDelVar ʟF
 For(C,1,length(Str2
 inString(Str1,sub(Str2,C,1→ʟA(C
@@ -193,7 +194,7 @@ If C:Goto O
 End
 If B=93:Then:DelVar BClrDraw:Lbl I
 Text(0,1,"+MINGAMES+
-ʟENSAV(2)→S:If Ans=1 or Ans=3:Text(12,1,"1. MINIGAME 1
+ʟENSAV(3)→S:If Ans=1 or Ans=3:Text(12,1,"1. MINIGAME 1
 If S≥2:Text(24,1,"2. MINIGAME 2
 DelVar SText(36,1,"3. BACK
 Repeat B
@@ -297,6 +298,6 @@ Text(48,1,"SAVE AND QUIT.
 Pause :ClrDraw
 Text(0,1,"A TILDA^3 PROD.
 Text(12,1,"CODED BY 123OUTERME.
-Text(24,1,"V1.2.1
+Text(24,1,"V1.2.3
 Pause :DelVar BClrDraw
 If B=93:Then:Goto H:End

@@ -83,7 +83,7 @@ Lbl D:Str6→Str7
 Lbl E:Str7→Str8
 Lbl F:" →Str8
 ʟENSAV(1)+2→ʟENSAV(1)
-DelVar Q1→F:Ans→L:Goto 7:End
+DelVar Q1→F:Ans→L:Goto 8:End
 If B=22:Then:Goto 5:End
 If B:Output(A,1," 
 If C=1:A+1→A
@@ -126,7 +126,6 @@ DeltaList(cumSum(ʟC→ʟC
 DeltaList(cumSum(ʟD→ʟD
 DeltaList(cumSum(ʟE→ʟE
 DeltaList(cumSum(ʟF→ʟF
-If Q:Goto 2
 If not(L:Then:DelVar Str1DelVar Str2DelVar Str3DelVar Str4DelVar Str5DelVar Str6DelVar Str7DelVar Str8DelVar ADelVar BDelVar CDelVar DDelVar EDelVar FDelVar GDelVar HDelVar IDelVar JDelVar KDelVar LDelVar MDelVar NDelVar ODelVar PDelVar QDelVar RDelVar SDelVar TDelVar UDelVar VDelVar WDelVar XDelVar YDelVar ZDelVar θSetUpEditor ʟA,ʟB,ʟC,ʟD,ʟE,ʟF,ʟENSAV:ClrHome
 Return:Else:3→A:Goto 8:End
 Lbl 8:End:Goto 2
@@ -298,6 +297,6 @@ Text(48,1,"SAVE AND QUIT.
 Pause :ClrDraw
 Text(0,1,"A TILDA^3 PROD.
 Text(12,1,"CODED BY 123OUTERME.
-Text(24,1,"V1.2.3
+Text(24,1,"V1.2.4
 Pause :DelVar BClrDraw
 If B=93:Then:Goto H:End

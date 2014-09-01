@@ -3,3 +3,4 @@ The custom list used to store Sparks, arrow design unlocked, and how many miniga
 Don't create any list defined above, the program will do it for you, if you don't have it.
 Minigame 1 will give you 10 Sparks for every 75 "I"s dodged.
 Minigame 2 will give you 10 Sparks for every 10 shots that hit the "Y".
+Q is the flag for adding a list item, F is the flag for removing a list item. B is the Getkey variable, and L is the quit flag variable.

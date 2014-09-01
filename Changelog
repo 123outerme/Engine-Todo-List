@@ -52,3 +52,11 @@ Changelog1.2.2:
 Changelog 1.2.3:
 *Added "Saving" message
 *Fixed small issues
+
+Changelog 1.2.4:
+*Fixed minor issue with adding a list item
+
+Changelog 1.2.5:
+*Actually fixed bug that quits when adding a list item
+*Fixed bug that doesn't allow items to be checked off
+*Small tweaks

@@ -15,8 +15,7 @@ If not(dim(ʟF:{27,27→ʟF
 If ʟENSAV(3)=1:":→Str4
 If ʟENSAV(3)=2:">→Str4
 If ʟENSAV(3)=3:"π→Str4
-Lbl 2
-" →Str2
+Lbl 2:" →Str2
 Ans→Str3
 Ans→Str5
 Ans→Str6
@@ -69,8 +68,8 @@ Output(2,1,"TOO LONG
 Pause :ClrHome:Goto K:End
 " "+Str0→Str0
 DelVar B1→Q:Goto 7:End
-If B=21:Then:Output(A,2,"                
-If A=3 and dim(ʟA>1:Goto A
+If B=21 and dim(ʟA>1:Then:Output(A,2,"                
+If A=3:Goto A
 If A=4 and dim(ʟB>1:Goto B
 If A=5 and dim(ʟC>1:Goto C
 If A=6 and dim(ʟD>1:Goto D
@@ -83,7 +82,7 @@ Lbl D:Str6→Str7
 Lbl E:Str7→Str8
 Lbl F:" →Str8
 ʟENSAV(1)+2→ʟENSAV(1)
-DelVar Q1→F:Ans→L:Goto 8:End
+DelVar Q1→F:Ans→L:Goto 7:End
 If B=22:Then:Goto 5:End
 If B:Output(A,1," 
 If C=1:A+1→A
@@ -94,7 +93,7 @@ Lbl 6
 If Q:Then:Str7→Str8
 Str6→Str7:Str5→Str6
 Str3→Str5:Str2→Str3
-Str0→Str2:DelVar Str0DelVar Q:End
+Str0→Str2:DelVar Str0DelVar Q1→L:End
 DelVar ʟADelVar ʟBDelVar ʟCDelVar ʟDDelVar ʟEDelVar ʟF
 For(C,1,length(Str2
 inString(Str1,sub(Str2,C,1→ʟA(C
@@ -297,6 +296,6 @@ Text(48,1,"SAVE AND QUIT.
 Pause :ClrDraw
 Text(0,1,"A TILDA^3 PROD.
 Text(12,1,"CODED BY 123OUTERME.
-Text(24,1,"V1.2.4
+Text(24,1,"V1.2.5
 Pause :DelVar BClrDraw
 If B=93:Then:Goto H:End
